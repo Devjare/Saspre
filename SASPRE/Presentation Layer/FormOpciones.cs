@@ -12,9 +12,57 @@ namespace SASPRE
 {
     public partial class FormOpciones : Form
     {
+
+        // Personal Info Variables
+        private String _userName;
+        private String _userLastName;
+        private String _userNickName;
+        private String _userRole;
+
+        public String UserRole
+        {
+            get { return _userRole; }
+            set {
+                _userRole = value;
+                lblRole.Text += _userRole;
+            }
+        }
+        public String userNickName
+        {
+            get { return _userNickName; }
+            set {
+                _userNickName = value;
+                lblNickName.Text += _userNickName;
+            }
+        }
+        public String UserLastName
+        {
+            get { return _userLastName; }
+            set {
+                _userLastName = value;
+                lblName.Text += _userLastName;
+            }
+        }
+        public String UserName
+        {
+            get { return _userName; }
+            set {
+                _userName = value;
+                lblName.Text += _userName;
+            }
+        }
+
+        private FormConfiguration login;
+
         public FormOpciones()
         {
             InitializeComponent();
+        }
+
+        public FormOpciones(FormConfiguration login)
+        {
+            InitializeComponent();
+            this.login = login;
         }
 
         #region windowDesign
@@ -27,7 +75,9 @@ namespace SASPRE
 
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
+            login.Show();
+            //this.Dispose();
         }
 
         protected override void WndProc(ref Message msj)

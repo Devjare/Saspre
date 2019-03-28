@@ -55,14 +55,21 @@
             this.lblInicio = new System.Windows.Forms.Label();
             this.cbCultivo = new System.Windows.Forms.ComboBox();
             this.panelFondo = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblExtra = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblNickName = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panelCenter.SuspendLayout();
             this.panelFondo.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
             // 
+            this.panelLeft.Controls.Add(this.tableLayoutPanel1);
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.bunifuFlatButton4);
             this.panelLeft.Controls.Add(this.bunifuFlatButton3);
@@ -598,6 +605,70 @@
             this.panelFondo.Size = new System.Drawing.Size(1280, 720);
             this.panelFondo.TabIndex = 20;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.lblExtra, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblRole, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblNickName, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 555);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 165);
+            this.tableLayoutPanel1.TabIndex = 13;
+            // 
+            // lblExtra
+            // 
+            this.lblExtra.AutoSize = true;
+            this.lblExtra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblExtra.Location = new System.Drawing.Point(3, 123);
+            this.lblExtra.Name = "lblExtra";
+            this.lblExtra.Size = new System.Drawing.Size(270, 42);
+            this.lblExtra.TabIndex = 3;
+            this.lblExtra.Text = "Nombre: ";
+            this.lblExtra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRole.Location = new System.Drawing.Point(3, 82);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(270, 41);
+            this.lblRole.TabIndex = 2;
+            this.lblRole.Text = "Rol: ";
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNickName
+            // 
+            this.lblNickName.AutoSize = true;
+            this.lblNickName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNickName.Location = new System.Drawing.Point(3, 41);
+            this.lblNickName.Name = "lblNickName";
+            this.lblNickName.Size = new System.Drawing.Size(270, 41);
+            this.lblNickName.TabIndex = 1;
+            this.lblNickName.Text = "Usuario: ";
+            this.lblNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Location = new System.Drawing.Point(3, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(270, 41);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Nombre: ";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,6 +692,8 @@
             this.panelCenter.ResumeLayout(false);
             this.panelCenter.PerformLayout();
             this.panelFondo.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -654,5 +727,10 @@
         private System.Windows.Forms.Label lblHumedad;
         private System.Windows.Forms.Label lblTemperatura;
         private System.Windows.Forms.Panel panelFondo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblExtra;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.Label lblNickName;
+        private System.Windows.Forms.Label lblName;
     }
 }

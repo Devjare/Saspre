@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SASPRE
@@ -50,12 +44,48 @@ namespace SASPRE
 
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            FormOpciones f = new FormOpciones();
-            f.Visible = true;
- 
+
+            var nickName = txtNickName.Text;
+            var password = txtPassword.Text;
+
+            if (nickName.Equals(String.Empty))
+            {
+                eprovider.SetError(txtNickName, "No deje el campo vacío");
+            }
+            else if (password.Equals(String.Empty))
+            {
+                eprovider.SetError(txtPassword, "No deje el campo vacío");
+            }
+            else
+            {
+                var user = Business_Layer.User.Login(nickName, password);
+
+                if(user.Rows.Count == 0)
+                {
+                    lblError.Visible = true;
+                    lblError.Text = "No se encontraron ususarios";
+                }
+                else
+                {
+                    // ID, name, lastName, pass, role, nickname
+                    this.Hide();
+                    var mainFrom = new FormOpciones(this)
+                    {
+                        UserName = user.Rows[0][1].ToString(),
+                        UserLastName = user.Rows[0][2].ToString(),
+                        UserRole = user.Rows[0][4].ToString(),
+                        userNickName = user.Rows[0][5].ToString()
+                    };
+                    mainFrom.Show();
+                }
+            }
+
+            //this.Visible = false;
+            //FormOpciones f = new FormOpciones();
+            //f.Visible = true;
+
         }
 
         private void FormConfiguration_Load(object sender, EventArgs e)

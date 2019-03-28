@@ -13,7 +13,7 @@ namespace SASPRE.Data_Layer
         private Connection connection;
 
         private String _nickName;
-
+        private String _password;
         private String _name;
 
         public String Name
@@ -21,23 +21,18 @@ namespace SASPRE.Data_Layer
             get { return _name; }
             set { _name = value; }
         }
-
-
         public String NickName
         {
             get { return _nickName; }
             set { _nickName = value; }
         }
-
-        private String _password;
-
         public String Password
         {
             get { return _password; }
             set { _password = value; }
         }
 
-        public System.Data.DataTable Login(User user)
+        public System.Data.DataTable Login()
         {
             var table = new System.Data.DataTable();
 
@@ -54,16 +49,24 @@ namespace SASPRE.Data_Layer
 
                 var nicknameParam = new MySqlParameter()
                 {
-                    ParameterName = "NickName",
+                    ParameterName = "nickname",
                     MySqlDbType = MySqlDbType.VarChar,
                     Size = 100,
-                    Value = user.NickName,
+                    Value = this.NickName,
                 };
+                command.Parameters.Add(nicknameParam);
 
                 var passwordParam = new MySqlParameter()
                 {
-                    ParameterName = ""
+                    ParameterName = "pass",
+                    MySqlDbType = MySqlDbType.Int32,
+                    Size = 8,
+                    Value = this.Password
                 };
+                command.Parameters.Add(passwordParam);
+
+                var adapter = new MySqlDataAdapter(command);
+                adapter.Fill(table);
 
             }
             catch (Exception)
@@ -75,8 +78,6 @@ namespace SASPRE.Data_Layer
             {
                 connection.CloseConnection();
             }
-
-
 
             return table;
         }

@@ -54,35 +54,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\User.cs" />
     <Compile Include="Data Layer\Connection.cs" />
     <Compile Include="Data Layer\User.cs" />
-    <Compile Include="FormMain.cs">
+    <Compile Include="Presentation Layer\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Presentation Layer\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConfiguration.cs">
+    <Compile Include="Presentation Layer\FormConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConfiguration.Designer.cs">
+    <Compile Include="Presentation Layer\FormConfiguration.Designer.cs">
       <DependentUpon>FormConfiguration.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOpciones.cs">
+    <Compile Include="Presentation Layer\FormOpciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOpciones.Designer.cs">
+    <Compile Include="Presentation Layer\FormOpciones.Designer.cs">
       <DependentUpon>FormOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Presentation Layer\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConfiguration.resx">
+    <EmbeddedResource Include="Presentation Layer\FormConfiguration.resx">
       <DependentUpon>FormConfiguration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOpciones.resx">
+    <EmbeddedResource Include="Presentation Layer\FormOpciones.resx">
       <DependentUpon>FormOpciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -171,9 +172,6 @@
   <ItemGroup>
     <None Include="Resources\bichoblanco.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business Layer\" />
-    <Folder Include="Presentation Layer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
